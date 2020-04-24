@@ -21,7 +21,15 @@ duplicates = []  # Return the list of duplicates in this data structure
 #             duplicates.append(name_1)
 
 # immediate thought is binary search tree
+tree = BinarySearchTree('names')
 
+for names in names_1:
+    tree.insert(names)
+for names in names_2:
+    if tree.contains(names):
+        duplicates.append(names)
+
+# logn
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
